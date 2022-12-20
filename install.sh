@@ -21,7 +21,7 @@ if [[ "$see_packages" == "y" ]] then
 fi
 
 for i in "${(ps. .)packages}"; do
-    exec sudo pacman -S $i >> echo   
+    exec sudo pacman -S $i    
 done
 
 
