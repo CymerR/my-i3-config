@@ -24,6 +24,18 @@ for i in "${(ps. .)packages}"; do
      sudo pacman -S $i --noconfirm --color always -p --print-format "%n : %v : %s Mb" --needed    
 done
 
+echo "Done installing!"
+
+DIR="/home/$SUDO_USER/.config"
+#DIR="/home/$SUDO_USER/Документы/temp"
+
+
+if [[ !(-a "$DIR") ]] then
+    mkdir $DIR
+    echo "Created dirs!"
+fi
+echo "Started copying!"
+cp i3 i3status polybar -r -t $DIR
+
+
 echo "Done!"
-
-
