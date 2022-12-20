@@ -21,7 +21,9 @@ if [[ "$see_packages" == "y" ]] then
 fi
 
 for i in "${(ps. .)packages}"; do
-    exec sudo pacman -S $i    
+     sudo pacman -S $i --noconfirm --color always -p --print-format "%n : %v : %s Mb" --needed    
 done
+
+echo "Done!"
 
 
